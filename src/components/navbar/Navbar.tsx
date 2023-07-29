@@ -1,8 +1,8 @@
 import React from "react";
-import Container from "@/components/ui/Container";
-import Logo from "@/components/ui/navbar/Logo";
-import Searchbar from "@/components/ui/navbar/Searchbar";
-import UserMenu from "@/components/ui/navbar/UserMenu";
+import Container from "@/components/myui/Container";
+import Logo from "@/components/navbar/Logo";
+import Searchbar from "@/components/navbar/Searchbar";
+import UserMenu from "@/components/navbar/UserMenu";
 
 const Navbar = () => {
   return (

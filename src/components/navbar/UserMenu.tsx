@@ -1,11 +1,13 @@
 "use client";
 import React, { useCallback, useState } from "react";
 import { BiMenu } from "react-icons/bi";
-import Avatar from "@/components/ui/Avatar";
+import Avatar from "@/components/myui/Avatar";
 import MenuItem from "./MenuItem";
+import useRegisterModal from "@/hooks/useRegisterModal";
 
 const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const registerModal = useRegisterModal();
 
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
@@ -29,7 +31,7 @@ const UserMenu = () => {
         <div className="absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm">
           <div className="flex flex-col cursor-pointer">
             <MenuItem onClick={() => {}} label="Login" />
-            <MenuItem onClick={() => {}} label="Register" />
+            <MenuItem onClick={registerModal.onOpen} label="Register" />
           </div>
         </div>
       )}
