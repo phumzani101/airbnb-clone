@@ -9,7 +9,7 @@ const Avatar = () => {
       src={imgSrc}
       className="rounded-full hidden md:block "
       height={30}
-      width={20}
+      width={30}
       alt="Avatar"
     />
   );
