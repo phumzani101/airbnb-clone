@@ -49,7 +49,7 @@ const RegisterModal = () => {
     setIsLoading(true);
     console.log(values);
     try {
-      await axios.post("/api/register", values).then(() => {
+      await axios.post("/api/auth/register", values).then(() => {
         registerModal.onClose();
       });
     } catch (error: any) {
