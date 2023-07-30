@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillGithub } from "react-icons/ai";
 
@@ -11,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -110,11 +108,11 @@ const LoginModal = () => {
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
       <hr />
-      <Button variant="outline">
+      {/* <Button variant="outline">
         Continue with <FcGoogle className="ml-1" />
         oogle
-      </Button>
-      <Button variant="outline">
+      </Button> */}
+      <Button variant="outline" onClick={() => signIn("github")}>
         Continue with <AiFillGithub className="ml-1" />
         Github
       </Button>

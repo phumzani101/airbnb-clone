@@ -5,11 +5,11 @@ import Avatar from "@/components/myui/Avatar";
 import MenuItem from "./MenuItem";
 import useRegisterModal from "@/hooks/useRegisterModal";
 import useLoginModal from "@/hooks/useLoginModal";
-import { User } from "@prisma/client";
 import { signOut } from "next-auth/react";
+import { SafeUser } from "@/types";
 
 interface UserMenuProps {
-  user?: User | null;
+  user?: SafeUser | null;
 }
 
 const UserMenu: FC<UserMenuProps> = ({ user }) => {
@@ -32,7 +32,7 @@ const UserMenu: FC<UserMenuProps> = ({ user }) => {
           className="flex flex-row items-center gap-3 p-3 md:py-1 md:px-2 border-[1px] border-neutral-200 cursor-pointer hover:shadow-md transition rounded-full"
         >
           <BiMenu size={20} />
-          <Avatar />
+          <Avatar src={user?.image} />
         </div>
       </div>
       {isOpen && (

@@ -22,6 +22,7 @@ import useRegisterModal from "@/hooks/useRegisterModal";
 import { Modal } from "./Modal";
 import Heading from "../myui/Heading";
 import { toast } from "react-hot-toast";
+import { signIn } from "next-auth/react";
 
 const formSchema = z.object({
   name: z.string().min(2).max(50),
@@ -47,7 +48,7 @@ const RegisterModal = () => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     setIsLoading(true);
-    console.log(values);
+
     try {
       await axios.post("/api/auth/register", values).then(() => {
         registerModal.onClose();
@@ -111,11 +112,11 @@ const RegisterModal = () => {
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
       <hr />
-      <Button variant="outline">
+      {/* <Button variant="outline">
         Continue with <FcGoogle className="ml-1" />
         oogle
-      </Button>
-      <Button variant="outline">
+      </Button> */}
+      <Button variant="outline" onClick={() => signIn("github")}>
         Continue with <AiFillGithub className="ml-1" />
         Github
       </Button>

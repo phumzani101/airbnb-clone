@@ -3,9 +3,9 @@ import Container from "@/components/myui/Container";
 import Logo from "@/components/navbar/Logo";
 import Searchbar from "@/components/navbar/Searchbar";
 import UserMenu from "@/components/navbar/UserMenu";
-import { User } from "@prisma/client";
+import { SafeUser } from "@/types";
 
-const Navbar = ({ user }: { user?: User | null }) => {
+const Navbar = ({ user }: { user?: SafeUser | null }) => {
   return (
     <div className="fixed w-full bg-white z-10 shadow-sm">
       <div className="py-4 border-b-[1px]">

@@ -2,8 +2,8 @@
 import Image from "next/image";
 import React from "react";
 
-const Avatar = () => {
-  let imgSrc = "/images/placeholder.jpg";
+const Avatar = ({ src }: { src?: string | null }) => {
+  let imgSrc = src ? src : "/images/placeholder.jpg";
   return (
     <Image
       src={imgSrc}
